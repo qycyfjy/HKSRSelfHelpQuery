@@ -20,6 +20,10 @@ internal class Program
         where TData : IData<TInfo> 
         where TInfo : IInfo
     {
+        if (string.IsNullOrEmpty(urlTemplate))
+        {
+            return;
+        }
         Db<TInfo> db = new();
         if (File.Exists(dbFileName))
         {
